@@ -1,0 +1,39 @@
+﻿@{
+    Page.Title = "Title goes here";
+    //Layout = "Your Layout Page goes here";
+}
+
+<h3>Home</h3>
+<div>
+
+</div>
+
+
+<script>
+
+    fetch("https://localhost:44339/api/Test/abc/Channels/def", {
+        headers: {
+            'content-type': 'application/json'
+        },
+        method: "GET",
+    }).then(response => response.json())
+      .then(response => console.log('get', response));
+
+    fetch("https://localhost:44339/api/Test/abc/Channels/def", {
+        headers: {
+            'content-type': 'application/json'
+        },
+        method: "DELETE",
+    }).then(response => response.json())
+      .then(response => console.log('delete1', response));
+
+    fetch("https://localhost:44339/api/Test/abc/Channels/19:afdefdbd67814c68acb4f18a875ece48@thread.tacv2", {
+        headers: {
+            'content-type': 'application/json'
+        },
+        method: "DELETE",
+    }).then(response => response.json())
+      .then(response => console.log('delete2', response));
+
+
+</script>
