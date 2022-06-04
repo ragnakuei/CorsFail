@@ -17,7 +17,19 @@
         },
         method: "GET",
     }).then(response => response.json())
-      .then(response => console.log('get', response));
+      .then(response => console.log('get1', response));
+    
+    // fetch("https://localhost:44339/api/Test/abc/Channels/19:afdefdbd67814c68acb4f18a875ece48@thread.tacv2", { // 有 CORS error
+    // fetch("https://localhost:44339/api/Test/abc/Channels/19afdefdbd67814c68acb4f18a875ece48thread.tacv2", {   // 有 CORS error
+    // fetch("https://localhost:44339/api/Test/abc/Channels/19:afdefdbd67814c68acb4f18a875ece48threadtacv2", {   // 有 CORS error
+    fetch("https://localhost:44339/api/Test/abc/Channels/19afdefdbd67814c68acb4f18a875ece48@threadtacv2", {      // 無 CORS error
+    // fetch("https://localhost:44339/api/Test/abc/Channels/19afdefdbd67814c68acb4f18a875ece48threadtacv2", {    // 無 CORS error
+        headers: {
+            'content-type': 'application/json'
+        },
+        method: "GET",
+    }).then(response => response.json())
+      .then(response => console.log('get2', response));
 
     fetch("https://localhost:44339/api/Test/abc/Channels/def", {
         headers: {
